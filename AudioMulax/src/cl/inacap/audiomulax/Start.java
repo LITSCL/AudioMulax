@@ -12,11 +12,11 @@ import cl.inacap.audiomulaxmodelo.dao.VentaDAO;
 import cl.inacap.audiomulaxmodelo.dto.Bateria;
 
 public class Start {
-	static ConsolaUtil cu = new ConsolaUtil(); //Se crea el objeto de tipo ConsolaUtils (Utilizado para el ingreso y validaci�n de datos).
-	static InstrumentoMusicalDAO daoInstrumentoMusical = new InstrumentoMusicalDAO(); //Creaci�n de objeto de tipo InstrumentosMusicalesDAO.
+	static ConsolaUtil cu = new ConsolaUtil(); //Se crea el objeto de tipo ConsolaUtils (Utilizado para el ingreso y validación de datos).
+	static InstrumentoMusicalDAO daoInstrumentoMusical = new InstrumentoMusicalDAO(); //Creación de objeto de tipo InstrumentosMusicalesDAO.
 	static VentaDAO daoVentas = new VentaDAO();
 	
-	//Menu de navegaci�n.
+	//Menu de navegación.
 	public static boolean menu() { 
 		boolean continuar = true;
 		System.out.println("1. Registrar Instrumento Musical");
@@ -54,7 +54,7 @@ public class Start {
 	//Proceso de registro del instrumento musical.
 	public static void registrarInstrumentoMusical() {
 		
-		//Proceso de validaci�n del precio del intrumento.
+		//Proceso de validación del precio del intrumento.
 		int valor;
 		do {
 			
@@ -66,7 +66,7 @@ public class Start {
 			
 		} while (valor < 100000);
 		
-		//Proceso de validaci�n de la marca del instrumento.
+		//Proceso de validación de la marca del instrumento.
 		String marca;
 		List<String> marcasValidas = Arrays.asList("tama", "gibson", "esp", "maxtone", "pearl", "fender"); //Lista de tipo String llamada MarcasValidas que almacena 6 elementos.
 		do {
@@ -74,9 +74,9 @@ public class Start {
 			System.out.println("Escriba la marca del instrumento (Tama; Gibson; ESP; Maxtone; Pearl; Fender)");
 			marca = cu.validarString().toLowerCase();
 			
-		} while (marcasValidas.contains(marca) == false); //El m�todo contains retorna un boolean dependiendo de que el par�metro ingresado est� o no en la lista, en otras palabras si la marca del instrumento no est� en la lista el programa no se sale del bucle.
+		} while (marcasValidas.contains(marca) == false); //El método contains retorna un boolean dependiendo de que el parámetro ingresado está o no en la lista, en otras palabras si la marca del instrumento no está en la lista el programa no se sale del bucle.
 		
-		//Proceso de validaci�n del tipo de instrumento.
+		//Proceso de validación del tipo de instrumento.
 		String tipoInstrumento;
 		do {
 			
@@ -85,7 +85,7 @@ public class Start {
 			
 		} while (!tipoInstrumento.equalsIgnoreCase("Guitarra") && tipoInstrumento.equalsIgnoreCase("Bateria") == false); //! y ==false son lo mismo.
 		
-		if (tipoInstrumento.equalsIgnoreCase("Guitarra")) { //C�digo a ejecutar si el instrumento es una guitarra.
+		if (tipoInstrumento.equalsIgnoreCase("Guitarra")) { //Código a ejecutar si el instrumento es una guitarra.
 			
 			int cantidadCuerdas;
 			do {
@@ -98,12 +98,12 @@ public class Start {
 				
 			} while (cantidadCuerdas < 6);
 			
-			System.out.println("�La guitarra tiene puente flotante? (Si/No)");
+			System.out.println("¿La guitarra tiene puente flotante? (Si/No)");
 			String respuesta = cu.validarString().toLowerCase();
 			boolean puenteFlotante = true;
 			while (respuesta.equals("si") == false && !respuesta.equals("no")) {
 				System.out.println("Su respuesta no fue valida, responda nuevamente");
-				System.out.println("�La guitarra es tiene puente flotante? (Si/No)");
+				System.out.println("¿La guitarra es tiene puente flotante? (Si/No)");
 				respuesta = cu.validarString().toLowerCase();
 			}
 			
@@ -114,7 +114,7 @@ public class Start {
 				puenteFlotante = false;
 			}
 			
-			//Proceso de creaci�n del objeto de tipo Guitarra.
+			//Proceso de creación del objeto de tipo Guitarra.
 			Guitarra g = new Guitarra();
 			g.setValor(valor);
 			g.setMarca(marca);
@@ -122,10 +122,10 @@ public class Start {
 			g.setPuenteFlotante(puenteFlotante);
 			InstrumentoMusical im = g; //Variable de tipo InstrumentoMusical que almacena objeto de tipo Guitarra (Esto puede suceder porque la clase Guitarra hereda de la clase InstrumentoMusical).
 			
-			daoInstrumentoMusical.save(im); //El c�digo de �ste m�todo a�ade el objeto reci�n creado a la lista. 
+			daoInstrumentoMusical.save(im); //El código de este método añade el objeto recién creado a la lista. 
 			
 		}
-		else { //C�digo a ejecutar si el instrumento es una bateria.
+		else { //Código a ejecutar si el instrumento es una bateria.
 			
 			int cantidadTambores;
 			do {
@@ -138,13 +138,13 @@ public class Start {
 				
 			} while (cantidadTambores < 2);
 			
-			System.out.println("�La bateria es el�ctrica? (Si/No)");
+			System.out.println("¿La bateria es eléctrica? (Si/No)");
 			String respuesta = cu.validarString().toLowerCase();
 			boolean esElectrica = true;
 			
 			while (respuesta.equals("si") == false && !respuesta.equals("no")) {
 				System.out.println("Su respuesta no fue valida, responda nuevamente");
-				System.out.println("�La bateria es el�ctrica? (Si/No)");
+				System.out.println("¿La bateria es eléctrica? (Si/No)");
 				respuesta = cu.validarString().toLowerCase();
 			}
 			
@@ -155,7 +155,7 @@ public class Start {
 				esElectrica = false;
 			}
 			
-			//Proceso de creaci�n del objeto de tipo bateria.
+			//Proceso de creación del objeto de tipo bateria.
 			Bateria b = new Bateria();
 			b.setValor(valor);
 			b.setMarca(marca);
@@ -163,7 +163,7 @@ public class Start {
 			b.setEsElectrica(esElectrica);
 			
 			InstrumentoMusical im = b; //Variable de tipo InstrumentoMusical que almacena objeto de tipo Bateria (Esto puede suceder porque la clase Bateria hereda de la clase InstrumentoMusical).
-			daoInstrumentoMusical.save(im); //El c�digo de �ste m�todo a�ade el objeto reci�n creado a la lista. 
+			daoInstrumentoMusical.save(im); //El código de éste método añade el objeto recién creado a la lista. 
 		}		
 	}
 	
@@ -212,7 +212,7 @@ public class Start {
 	
 	//Proceso de venta de los intrumentos.
 	public static void venderInstrumentosMusicales() {
-		List<InstrumentoMusical> instrumentosDisponibles = daoInstrumentoMusical.getAll(); //Esta instrucci�n trae la lista que almacena los instrumentos.
+		List<InstrumentoMusical> instrumentosDisponibles = daoInstrumentoMusical.getAll(); //Esta instrucción trae la lista que almacena los instrumentos.
 		
 		if (instrumentosDisponibles.isEmpty() == false) {
 			
@@ -222,7 +222,7 @@ public class Start {
 			System.out.println("Ingrese Rut del comprador");
 			String rutComprador = cu.validarString();
 			
-			//Proceso de creaci�n del objeto Venta
+			//Proceso de creación del objeto Venta
 			Venta venta = new Venta();
 			venta.setNombreComprador(nombreComprador);
 			venta.setRutComprador(rutComprador);
@@ -231,7 +231,7 @@ public class Start {
 			
 			String respuesta;
 			do {
-				System.out.println("�Que instrumentos desea comprar?");
+				System.out.println("¿Que instrumentos desea comprar?");
 				for (int i = 0; i < instrumentosDisponibles.size(); i++) { //Aca se esta recorriendo la lista de instrumentos (Tiene que ser un bucle for proque el usuario tiene que acceder al indice).
 					
 					InstrumentoMusical im = instrumentosDisponibles.get(i);
@@ -248,21 +248,21 @@ public class Start {
 				}
 				int posicion = cu.validarInt(); //Aca se pide el instrumento que el comprador desea comprar.
 				try { //Este try es necesario porque el usuario podria ingresar un indice que no existe.
-					venta.getInstrumentos().add(instrumentosDisponibles.get(posicion)); //Utilizando el objeto Venta se trae la lista llamada Instrumentos y se le agrega el instrumento que seleccion� el usuario.
+					venta.getInstrumentos().add(instrumentosDisponibles.get(posicion)); //Utilizando el objeto Venta se trae la lista llamada Instrumentos y se le agrega el instrumento que seleccionó el usuario.
 				} catch (Exception ex) {
 					System.out.println("Posicion inexistente");
 				}
-				System.out.println("�Desea seguir agregando instrumentos? (Si/No)");
+				System.out.println("¿Desea seguir agregando instrumentos? (Si/No)");
 				respuesta = cu.validarString();
 			} while (respuesta.equalsIgnoreCase("Si"));
 			
-			daoVentas.save(venta); //En esta instrucci�n se almacena la venta en la lista.
-			int Total = 0; //Se crea la variable que sumar� los precios de la lista que esta en la clase venta.
+			daoVentas.save(venta); //En esta instrucción se almacena la venta en la lista.
+			int Total = 0; //Se crea la variable que sumará los precios de la lista que esta en la clase venta.
 			for (int i = 0; i < venta.getInstrumentos().size(); i++) { //Aca se recorre la lista de instrumentos que el usuario quiere comprar.
 				Total+=venta.getInstrumentos().get(i).getValor(); //Utilizando el objeto Venta se trae la lista llamada Instrumentos y a cada objeto se le obtiene su atributo Valor y este es acumulado en la variable.
 			}
 			venta.setTotal(Total); //Se modifica el atributo Total.
-			venta.setIVA((int)(Total * 0.19)); //Se modifica el atributo IVA (El atributo debe ser refundido porque el m�todo solo puede retornar datos de tipo int).
+			venta.setIVA((int)(Total * 0.19)); //Se modifica el atributo IVA (El atributo debe ser refundido porque el método solo puede retornar datos de tipo int).
 			venta.setTotalConIVA((int)(Total * 1.19));
 			System.out.println("El total de la venta es: " + venta.getTotal()); //Se imprime el atributo Total.
 			System.out.println("El IVA de la venta es: " + venta.getIVA()); //Se imprime el atributo IVA.
@@ -275,10 +275,10 @@ public class Start {
 		
 	}
 
-	//Proceso de impresi�n de ventas realizadas.
+	//Proceso de impresión de ventas realizadas.
 	public static void mostrarVentasRealizadas() {
 	
-		List<Venta> ventas = daoVentas.getAll(); //En esta instrucci�n se trae la lista con las ventas realizadas.
+		List<Venta> ventas = daoVentas.getAll(); //En esta instrucción se trae la lista con las ventas realizadas.
 		if (ventas.isEmpty() == false) {
 			ventas.forEach(System.out::println);
 		}
@@ -291,7 +291,7 @@ public class Start {
 	public static void anularVenta() {
 		List<Venta> ventas = daoVentas.getAll(); //Aca se traen todas las ventas realizadas.
 		if (ventas.isEmpty() == false) {
-			System.out.println("�Que venta desea eliminar?");
+			System.out.println("¿Que venta desea eliminar?");
 			for (int i = 0;i < ventas.size(); i++) {
 				System.out.println(i + " - " + ventas.get(i)); //Aca se trae el toString de la venta.
 			}

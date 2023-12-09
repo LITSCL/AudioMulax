@@ -17,6 +17,6 @@ public class Bateria extends InstrumentoMusical { //Significa que esta clase her
 		this.cantidadDeTambores = CantidadDeTambores;
 	}
 	public String toString() {
-		return "Bateria: "+this.marca+" Valor: "+this.valor+" Cantidad de tambores: "+this.cantidadDeTambores;
+		return "Bateria: " + this.marca + " Valor: " + this.valor + " Cantidad de tambores: " + this.cantidadDeTambores;
 	}
 }

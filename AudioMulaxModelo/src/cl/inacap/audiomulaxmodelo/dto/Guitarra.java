@@ -21,6 +21,6 @@ public class Guitarra extends InstrumentoMusical { //Significa que esta clase he
 	}
 	
 	public String toString() {
-		return "Guitarra: "+this.marca+" Valor: "+this.valor+" Cantidad de cuerdas: "+this.cantidadDeCuerdas;
+		return "Guitarra: " + this.marca + " Valor: " + this.valor + " Cantidad de cuerdas: " + this.cantidadDeCuerdas;
 	}
 }

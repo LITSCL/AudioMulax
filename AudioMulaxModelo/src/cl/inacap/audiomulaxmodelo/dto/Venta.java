@@ -9,7 +9,7 @@ public class Venta {
 	private int total;
 	private int iva;
 	private int totalConIVA;
-	private List<InstrumentoMusical> instrumentos=new ArrayList<InstrumentoMusical>(); //Esta instrucción también se puede escribir así: private List<InstrumentoMusical> Instrumentos=new ArrayList<>();, ésta es la lista de instrumentos a vender.
+	private List<InstrumentoMusical> instrumentos=new ArrayList<InstrumentoMusical>(); //Esta instrucciÃ³n tambiÃ©n se puede escribir asÃ­: "private List<InstrumentoMusical> Instrumentos=new ArrayList<>();", Ã‰sta es la lista de instrumentos a vender.
 	
 	public List<InstrumentoMusical> getInstrumentos() {
 		return instrumentos;
@@ -50,10 +50,10 @@ public class Venta {
 	public String toString() {
 		String texto="Boleta de venta:\n";
 		for (InstrumentoMusical im : instrumentos) {
-			texto+=im.toString() + "\n"; //En esta instrucción no es necesario llamar al método toString.
+			texto+=im.toString() + "\n"; //En esta instrucciÃ³n no es necesario llamar al mÃ©todo toString.
 		}
 		texto+="Total de venta: " + this.getTotal() + "\n";
-		texto+="IVA: "+this.getIVA() + "\n";
+		texto+="IVA: " + this.getIVA() + "\n";
 		texto+="Total con IVA: " + this.getTotalConIVA() + "\n";
 		return texto;
 	}
