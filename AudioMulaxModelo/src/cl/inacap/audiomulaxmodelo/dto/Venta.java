@@ -14,41 +14,53 @@ public class Venta {
 	public List<InstrumentoMusical> getInstrumentos() {
 		return instrumentos;
 	}
+
 	public void setInstrumentos(List<InstrumentoMusical> Instrumentos) {
 		this.instrumentos = Instrumentos;
 	}
+
 	public String getNombreComprador() {
 		return nombreComprador;
 	}
+
 	public void setNombreComprador(String NombreComprador) {
 		this.nombreComprador = NombreComprador;
 	}
+
 	public String getRutComprador() {
 		return rutComprador;
 	}
+
 	public void setRutComprador(String RutComprador) {
 		this.rutComprador = RutComprador;
 	}
+
 	public int getTotal() {
 		return total;
 	}
+
 	public void setTotal(int Total) {
 		this.total = Total;
 	}
+
 	public int getIVA() {
 		return iva;
 	}
+
 	public void setIVA(int IVA) {
 		this.iva = IVA;
 	}
+	
 	public int getTotalConIVA() {
 		return totalConIVA;
 	}
+
 	public void setTotalConIVA(int TotalConIVA) {
 		this.totalConIVA = TotalConIVA;
 	}
+
 	public String toString() {
-		String texto="Boleta de venta:\n";
+		String texto = "Boleta de venta:\n";
 		for (InstrumentoMusical im : instrumentos) {
 			texto+=im.toString() + "\n"; //En esta instrucción no es necesario llamar al método toString.
 		}
