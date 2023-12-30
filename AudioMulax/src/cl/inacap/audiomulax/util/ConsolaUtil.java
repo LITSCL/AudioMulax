@@ -6,7 +6,6 @@ public class ConsolaUtil {
 	static Scanner sc = new Scanner(System.in); //Se crea el objeto de tipo Scanner;
 	
 	public String validarString() { //Método que verifica el ingreso correcto de datos de tipo String.
-		
 		String strings; //Se declara la variable a retornar.
 		
 		do {
@@ -22,7 +21,6 @@ public class ConsolaUtil {
 	}
 	
 	public int validarInt() { //Método que verifica el ingreso correcto de datos de tipo int.
-		
 		int ints = -1; //Se declara la variable a retornar.
 		String lectura; //Se declara el String utilizado para la lectura de datos.
 		

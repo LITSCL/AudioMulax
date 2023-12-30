@@ -26,27 +26,27 @@ public class Start {
 		System.out.println("5. Anular Venta");
 		System.out.println("0. Salir");
 		switch (cu.validarString()) {
-		case "1":
-			registrarInstrumentoMusical();
-			break;
-		case "2":
-			mostrarInstrumentosMusicales();
-			break;
-		case "3":
-			venderInstrumentosMusicales();
+			case "1":
+				registrarInstrumentoMusical();
 				break;
-		case "4":
-			mostrarVentasRealizadas();
-			break;
-		case "5":
-			anularVenta();
-			break;
-		case "0":
-			continuar = false;
-			break;
-		default:
-			System.out.println("Opcion incorrecta");
-			break;
+			case "2":
+				mostrarInstrumentosMusicales();
+				break;
+			case "3":
+				venderInstrumentosMusicales();
+				break;
+			case "4":
+				mostrarVentasRealizadas();
+				break;
+			case "5":
+				anularVenta();
+				break;
+			case "0":
+				continuar = false;
+				break;
+			default:
+				System.out.println("Opcion incorrecta");
+				break;
 		}
 		return continuar;	
 	}
@@ -206,7 +206,6 @@ public class Start {
 		else {
 			System.out.println("No hay instrumentos que mostrar");
 		}
-
 		
 	}
 	
@@ -226,8 +225,6 @@ public class Start {
 			Venta venta = new Venta();
 			venta.setNombreComprador(nombreComprador);
 			venta.setRutComprador(rutComprador);
-			
-			
 			
 			String respuesta;
 			do {
@@ -267,12 +264,10 @@ public class Start {
 			System.out.println("El total de la venta es: " + venta.getTotal()); //Se imprime el atributo Total.
 			System.out.println("El IVA de la venta es: " + venta.getIVA()); //Se imprime el atributo IVA.
 			System.out.println("La suma del total con el IVA es: " + venta.getTotalConIVA()); //Se imprime el atributo TotalConIVA.
-			
 		}
 		else {
 			System.out.println("No hay instrumentros disponibles para vender");
 		}
-		
 	}
 
 	//Proceso de impresión de ventas realizadas.
@@ -305,11 +300,9 @@ public class Start {
 		else {
 			System.out.println("No hay ventas que anular");
 		}
-
 	}
 
 	public static void main(String[] args) {
 		while (menu());
 	}
-
 }
