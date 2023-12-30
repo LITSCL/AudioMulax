@@ -181,13 +181,13 @@ public class Start {
 		});*/
 		
 		/*Iterador V3.
-		for (InstrumentoMusical im : Existentes) {
+		for (InstrumentoMusical im : existentes) {
 			System.out.println(im);
 		}*/
 		
 		/*Iterador V4.
-		for (int i = 0; i < Existentes.size(); i++) {
-			System.out.println(Existentes.get(i));
+		for (int i = 0; i < existentes.size(); i++) {
+			System.out.println(existentes.get(i));
 		}*/
 		
 		//Iterador V5.
@@ -232,7 +232,7 @@ public class Start {
 				for (int i = 0; i < instrumentosDisponibles.size(); i++) { //Aca se esta recorriendo la lista de instrumentos (Tiene que ser un bucle for proque el usuario tiene que acceder al indice).
 					
 					InstrumentoMusical im = instrumentosDisponibles.get(i);
-					System.out.print(i+"- ");
+					System.out.print(i + "- ");
 					if (im instanceof Guitarra) { //Aqui pregunta si la variable im es una instancia de la clase Guitarra.
 						Guitarra g = (Guitarra) im; //Casting, DownCasting (El instrumento se convierte a guitarra).
 
@@ -287,7 +287,7 @@ public class Start {
 		List<Venta> ventas = daoVentas.getAll(); //Aca se traen todas las ventas realizadas.
 		if (ventas.isEmpty() == false) {
 			System.out.println("¿Que venta desea eliminar?");
-			for (int i = 0;i < ventas.size(); i++) {
+			for (int i = 0; i < ventas.size(); i++) {
 				System.out.println(i + " - " + ventas.get(i)); //Aca se trae el toString de la venta.
 			}
 			try {
